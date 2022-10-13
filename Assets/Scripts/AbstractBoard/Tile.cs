@@ -2,17 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile : MonoBehaviour
+public class Tile
 {
-    // Start is called before the first frame update
-    void Start()
+    private int x, y;
+    private Unit unit;
+    private TileType type;
+
+
+    public Tile(int x, int y)
     {
-        
+        this.x = x;
+        this.y = y;
     }
 
-    // Update is called once per frame
-    void Update()
+    public Tile(int x, int y, Unit unit)
     {
-        
+        this.x = x;
+        this.y = y;
+        this.unit = unit;
     }
+
+
+    public TileType Type {
+        get
+        {
+            return type;
+        }
+    }
+
+}
+
+//*********************************************************************************//
+
+public enum TileType
+{
+    hill, plain, moutain, highland
 }
